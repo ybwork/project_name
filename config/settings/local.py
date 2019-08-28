@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'project_name.app_name'
 ]
 
 MIDDLEWARE = [
@@ -126,6 +127,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'project_name/static')
+
+STATICFILES_DIRS = [
+    os.path.join(PROJECT_ROOT, 'node_modules')
+]
 
 LOGIN_URL = 'login/'
 LOGIN_REDIRECT_URL = '/'
