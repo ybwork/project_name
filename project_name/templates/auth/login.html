@@ -1,13 +1,36 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    {% if form.errors %}
-        <p>Your username and password didn't match. Please try again.</p>
-    {% endif %}
-    <form action="{% url 'login' %}" method="POST">
-        {% csrf_token %}
-        <input type="text" name="username">
-        <input type="password" name="password">
-        <button type="submit">Go</button>
-    </form>
+
+{% if form.errors %}
+	<p>Your username and password didn't match. Please try again.</p>
+{% endif %}
+<div class="uk-section uk-section-muted uk-flex uk-flex-middle uk-animation-fade" uk-height-viewport>
+	<div class="uk-width-1-1">
+		<div class="uk-container">
+			<div class="uk-grid-margin uk-grid uk-grid-stack" uk-grid>
+				<div class="uk-width-1-1@m">
+					<div class="uk-margin uk-width-large uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large">
+						<form action="{% url 'login' %}" method="POST">
+							{% csrf_token %}
+							<div class="uk-margin">
+								<div class="uk-inline uk-width-1-1">
+									<input class="uk-input uk-form-large" type="text" name="username" placeholder="username">
+								</div>
+							</div>
+							<div class="uk-margin">
+								<div class="uk-inline uk-width-1-1">
+									<input class="uk-input uk-form-large" type="password" name="password" placeholder="password">
+								</div>
+							</div>
+							<div class="uk-margin">
+								<button type="submit" class="uk-button uk-button-primary uk-button-large uk-width-1-1">Login</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 {% endblock content %}

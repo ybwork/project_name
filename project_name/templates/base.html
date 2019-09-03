@@ -1,15 +1,27 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
-{% load staticfiles %}
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>
+        {% block title %}
+            Login
+        {% endblock title %}
+    </title>
+    {% block styles %}
+        <link rel="stylesheet" href="{% static 'uikit/dist/css/uikit.min.css'%}"/>
+    {% endblock styles %}
 </head>
-<body>
+<body class="h-100">
+    {% block header %}{% endblock %}
     {% block content %}{% endblock content %}
-    <script src="{% static 'jquery/dist/jquery.slim.min.js' %}"></script>
-    <script src="{% static 'popper.js/dist/umd/popper.min.js' %}"></script>
-    <script src="{% static 'bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    {% block footer %}{% endblock %}
+
+    {% block scripts %}
+        <script src="{% static 'jquery/dist/jquery.min.js' %}"></script>
+        <script src="{% static 'uikit/dist/js/uikit.min.js' %}"></script>
+        <script src="{% static 'uikit/dist/js/uikit-icons.min.js' %}"></script>
+    {% endblock scripts %}
 </body>
 </html>
