@@ -8,7 +8,7 @@ urlpatterns = [
     path(route='admin/', view=admin.site.urls),
     # убрать, когда все будет готово и оставить коммент,
     # что для работы нужно указать home
-    path(route='', view=views.home),
+    path(route='', view=views.HomePageView.as_view(), name='home'),
     path(
         route='login/',
         view=auth_views.LoginView.as_view(

@@ -1,7 +1,6 @@
-from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import TemplateView
 
 
-@login_required
-def home(request):
-	return HttpResponse('home')
+class HomePageView(LoginRequiredMixin, TemplateView):
+	template_name = 'home.html'
