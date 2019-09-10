@@ -1,5 +1,50 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <p>Home</p>
+    <div class="uk-container">
+        <form class="uk-form-stacked uk-padding">
+            <div class="uk-margin">
+                <label class="uk-form-label" for="form-stacked-text">Text</label>
+                <div class="uk-form-controls">
+                    <input class="uk-input" id="form-stacked-text" type="text">
+                </div>
+            </div>
+            <div class="uk-margin">
+                <label class="uk-form-label" for="form-stacked-text">TextArea</label>
+                <div class="uk-form-controls">
+                    <textarea class="uk-textarea" rows="5"></textarea>
+                </div>
+            </div>
+            <div class="uk-margin">
+                <label class="uk-form-label" for="form-stacked-select">Select</label>
+                <div class="uk-form-controls">
+                    <select class="uk-select" id="form-stacked-select">
+                        <option>Option 01</option>
+                        <option>Option 02</option>
+                    </select>
+                </div>
+            </div>
+            <div class="uk-margin">
+                <div class="uk-form-label">Radio</div>
+                <div class="uk-form-controls">
+                    <label><input class="uk-radio" type="radio" name="radio1" checked> Option 01</label>
+                    <label><input class="uk-radio" type="radio" name="radio1"> Option 02</label>
+                </div>
+            </div>
+            <div class="uk-margin">
+                <div class="uk-form-label">Checkbox</div>
+                <div class="uk-form-controls">
+                    <label><input class="uk-checkbox" type="checkbox" checked> A</label>
+                    <label><input class="uk-checkbox" type="checkbox"> B</label>
+                </div>
+            </div>
+            <div class="uk-margin">
+                <div uk-form-custom="target: true">
+                    <input type="file" multiple>
+                    <button class="uk-button uk-button-default" type="button" tabindex="-1">Files</button>
+                </div>
+            </div>
+            <button class="uk-button uk-width-1-1 uk-margin-small-bottom">Submit</button>
+        </form>
+    </div>
 {% endblock content %}
