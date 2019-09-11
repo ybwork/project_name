@@ -1,5 +1,12 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
+{% block styles %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+{% endblock styles %}
+
 {% block content %}
     <div class="uk-container">
         <form class="uk-form-stacked uk-padding">
@@ -44,7 +51,7 @@
                     <button class="uk-button uk-button-default" type="button" tabindex="-1">Files</button>
                 </div>
             </div>
-            <button class="uk-button uk-width-1-1 uk-margin-small-bottom">Submit</button>
+            <button class="uk-button uk-width-1-1 uk-margin-small-bottom custom-button">Submit</button>
         </form>
     </div>
 {% endblock content %}

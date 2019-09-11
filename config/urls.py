@@ -7,8 +7,8 @@ urlpatterns = [
     # убрать, когда все будет готово и оставить коммент,
     # что для работы нужно указать home
     path(
-        '',
-        include(arg='project_name.main.urls'),
+        route='',
+        view=include(arg='project_name.main.urls')
     ),
     path(
         route='login/',
