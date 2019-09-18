@@ -25,7 +25,7 @@ SECRET_KEY = '7sw7#w1ws6#8h)brgvvq#6ga6z3=7!u+o1tff-hu%o%#_($137'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -139,4 +139,17 @@ LOGOUT_REDIRECT_URL = '/login/'
 # APPEND_SLASH = False
 
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
-EMAIL_FILE_PATH = 'templates/emails/'
+EMAIL_FILE_PATH = os.path.join(PROJECT_ROOT, 'project_name/templates/emails/')
+
+# ADMINS = ('me', 'kaduk2593@gmail.com')
+#
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
+#     'handlers': {
+#         'mail_admins': {
+#             'level': 'ERROR',
+#             'class': 'django.utils.log.AdminEmailHandler'
+#         }
+#     }
+# }
