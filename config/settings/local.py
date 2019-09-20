@@ -153,7 +153,7 @@ LOGGING = {
         }
     },
     'loggers': {
-        'error': {
+        'default': {
             'handlers': ['mail_admins'],
             'level': 'ERROR',
             'propagate': True,

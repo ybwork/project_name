@@ -3,7 +3,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.mail import send_mail
 from django.views.generic import TemplateView
 
-logger = logging.getLogger('error')
+logger = logging.getLogger('default')
 
 
 class HomePageView(LoginRequiredMixin, TemplateView):
