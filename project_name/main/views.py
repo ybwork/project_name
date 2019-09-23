@@ -1,7 +1,9 @@
 import logging
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.mail import send_mail
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, CreateView
+
+from project_name.main.models import Article
 
 logger = logging.getLogger('default')
 
@@ -20,5 +22,9 @@ class HomePageView(LoginRequiredMixin, TemplateView):
 		# 	recipient_list=['to@example.com']
 		# )
 
-		logger.error('Something went wrong!')
+		# logger.error('Something went wrong!')
 		return super().get_context_data(**kwargs)
+
+
+class ArticleCreateView(CreateView):
+	model = Article

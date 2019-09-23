@@ -141,7 +141,7 @@ LOGOUT_REDIRECT_URL = '/login/'
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
 EMAIL_FILE_PATH = os.path.join(PROJECT_ROOT, 'project_name/templates/emails/')
 
-ADMINS = (('Admin', 'admin@my-domain.com'),)
+ADMINS = (('Ilia', 'kaduk2593@gmail.com'),)
 
 LOGGING = {
     'version': 1,
