@@ -18,9 +18,8 @@
         <nav class="uk-navbar-container" uk-navbar>
             <div class="uk-navbar-left">
                 <ul class="uk-navbar-nav">
-                    <li><a href="">Articles</a></li>
-                    <li><a href="">News</a></li>
-                    <li><a href="">Videos</a></li>
+                    <li><a href="{% url 'main:home' %}">Home</a></li>
+                    <li><a href="{% url 'main:article_create' %}">Articles</a></li>
                 </ul>
             </div>
 

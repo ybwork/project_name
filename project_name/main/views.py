@@ -1,4 +1,7 @@
 import logging
+import os
+
+from django.conf import settings
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.mail import send_mail
 from django.views.generic import TemplateView, CreateView
@@ -28,3 +31,4 @@ class HomePageView(LoginRequiredMixin, TemplateView):
 
 class ArticleCreateView(CreateView):
 	model = Article
+	fields = ['image', 'price']
