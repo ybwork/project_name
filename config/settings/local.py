@@ -56,7 +56,7 @@ PROJECT_ROOT = os.path.abspath(os.path.dirname(__name__))
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(PROJECT_ROOT, 'project_name/templates')],
+        'DIRS': [os.path.join(PROJECT_ROOT, 'project_name/templates/')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -126,7 +126,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'project_name/static')
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'project_name/static/')
 
 STATICFILES_DIRS = [
     os.path.join(PROJECT_ROOT, 'node_modules')
@@ -161,4 +161,5 @@ LOGGING = {
     }
 }
 
-MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'project_name/media')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'project_name/media/')

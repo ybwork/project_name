@@ -31,4 +31,4 @@ class HomePageView(LoginRequiredMixin, TemplateView):
 
 class ArticleCreateView(CreateView):
 	model = Article
-	fields = ['image', 'price']
+	fields = ['image']

@@ -1,3 +1,5 @@
+from django.conf import settings
+from django.conf.urls.static import static
 from django.urls import path
 
 from project_name.main import views
@@ -14,4 +16,4 @@ urlpatterns = [
         view=views.ArticleCreateView.as_view(),
         name='article_create'
     )
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
