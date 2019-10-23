@@ -4,7 +4,8 @@ import os
 from django.conf import settings
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.mail import send_mail
-from django.views.generic import TemplateView, CreateView
+from django.urls import reverse_lazy
+from django.views.generic import TemplateView, CreateView, ListView
 
 from project_name.main.models import Article
 
@@ -31,4 +32,9 @@ class HomePageView(LoginRequiredMixin, TemplateView):
 
 class ArticleCreateView(CreateView):
 	model = Article
-	fields = ['image']
+	fields = ['image', 'price']
+	success_url = reverse_lazy('main:article_list')
+
+
+class ArticleListView(ListView):
+	model = Article

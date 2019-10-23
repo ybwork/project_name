@@ -1,0 +1,79 @@
+korallmicro все продукты
+
+	select 
+		count(*) 
+	from public.products
+
+		23100
+
+korallmicro продукты с published = true
+
+	select 
+		count(*) 
+	from 
+		public.products
+	where
+		published = true
+
+		19927
+
+korallmicro продукты с published = false
+
+	select 
+		count(*)
+	from 
+		public.products
+	where
+		published = false
+
+		3173
+
+карточки товара в magic из тех, что published = false на коралле
+
+	select 
+	    count(*)
+	from
+	    magic.cards_productcard
+	where
+	    code IN (
+	    	86 , 
+	    	249,
+	        251
+	        ...
+	    )
+	    
+	    609
+
+карточки товара в magic из тех, что published = false на коралле, которые полностью валидны
+
+	SELECT
+		cards_productcard.code 
+	FROM
+		magic.cards_productcard
+			LEFT OUTER JOIN
+		magic.cards_productcardimage ON cards_productcard.id = cards_productcardimage.card_id
+			INNER JOIN
+		magic.cards_kind ON cards_productcard.kind_id = cards_kind.id
+			INNER JOIN
+		magic.cards_property ON cards_kind.id = cards_property.kind_id
+	WHERE
+		cards_productcard.code IN (
+			86,
+			249,
+			251,
+			...
+		)
+		AND cards_productcard.is_checked = TRUE
+		AND cards_productcard.is_actual = TRUE
+		AND cards_productcard.brand_id IS NOT NULL
+		AND cards_productcard.code IS NOT NULL
+		AND cards_productcard.has_invalid_images = FALSE
+		AND cards_productcard.is_ready = TRUE
+		AND cards_productcard.is_checked = TRUE
+		AND cards_property.id IS NOT NULL
+		AND cards_productcard.date_formed_description IS NOT NULL
+	GROUP BY cards_productcard.id
+	HAVING COUNT(cards_productcardimage.id) > 0
+	ORDER BY cards_productcard.code ASC
+
+		0

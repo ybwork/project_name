@@ -1,5 +1,6 @@
-/.idea/
+.idea
 *.pyc
 /node_modules/
 /project_name/templates/emails/
 /project_name/static/
+/project_name/media/
