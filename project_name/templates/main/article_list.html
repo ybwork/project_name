@@ -4,7 +4,7 @@
     <div class="uk-container">
         <p>Article list</p>
         {% for article in object_list %}
-            <img src="{{ atricle.image }}">
+            <img src="{{ article.image.url }}"/>
         {% endfor %}
     </div>
 {% endblock content %}
