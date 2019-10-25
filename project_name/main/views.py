@@ -26,7 +26,7 @@ class HomePageView(LoginRequiredMixin, TemplateView):
 		# 	recipient_list=['to@example.com']
 		# )
 
-		# logger.error('Something went wrong!')
+		logger.error('Something went wrong!')
 		return super().get_context_data(**kwargs)
 
 
