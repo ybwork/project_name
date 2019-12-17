@@ -4,7 +4,7 @@ Install
 
     pip install -r requirements.txt
 
-Before run
+Migrate
 
     ./manage.py migrate --settings=config.settings.local
 

@@ -3,6 +3,7 @@ import os
 
 from django.conf import settings
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.cache import cache
 from django.core.mail import send_mail
 from django.urls import reverse_lazy
 from django.views.generic import TemplateView, CreateView, ListView
@@ -26,7 +27,10 @@ class HomePageView(LoginRequiredMixin, TemplateView):
 		# 	recipient_list=['to@example.com']
 		# )
 
-		logger.error('Something went wrong!')
+		# logger.error('Something went wrong!')
+
+		# cache.set('my_key', 'hello, world!', 30)
+		# print(cache.get('my_key'))
 		return super().get_context_data(**kwargs)
 
 
