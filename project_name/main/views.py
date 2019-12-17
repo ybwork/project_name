@@ -20,12 +20,12 @@ class HomePageView(LoginRequiredMixin, TemplateView):
 		"""
 		Place for base settings
 		"""
-		# send_mail(
-		# 	subject='Subject here',
-		# 	message='Here is the message.',
-		# 	from_email='from@example.com',
-		# 	recipient_list=['to@example.com']
-		# )
+		send_mail(
+			subject='Subject here',
+			message='Here is the message.',
+			from_email='from@example.com',
+			recipient_list=['to@example.com']
+		)
 
 		# logger.error('Something went wrong!')
 
